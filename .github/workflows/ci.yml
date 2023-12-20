@@ -1,10 +1,10 @@
 name: Continuous Integration
 on:
- pull_request:
- # Tambahkan definisi branch main seperti berikut
- branches:
- - master
- - main
+  pull_request:
+   # Tambahkan definisi branch main seperti berikut
+  branches:
+   - master
+   - main
  
 jobs:
   test:
