@@ -1,4 +1,5 @@
 name: Continuous Integration
+<<<<<<< HEAD:.github/ci.yml
 
 on:
   pull_request:
@@ -7,6 +8,13 @@ on:
     - master
     - main
  
+=======
+on:
+  pull_request:
+    branches:
+    - master
+    - main
+>>>>>>> 5f1e12d7803de4eeaa33ab35852eadb2fd231ddc:.github/workflows/ci.yml
 jobs:
   test:
     runs-on: ubuntu-latest
