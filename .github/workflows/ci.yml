@@ -1,18 +1,18 @@
 name: Continuous Integration
 
 on:
- pull_request:
-  branches:
-   - master
-   - main
+  pull_request:
+    branches:
+    - master
+    - main
 
 jobs:
   test:
-   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
   strategy:
     matrix:
-     node-version: [14.x]
+      node-version: [14.x]
  # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
   services:
