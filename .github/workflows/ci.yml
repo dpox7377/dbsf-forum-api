@@ -1,9 +1,20 @@
 name: Continuous Integration
+<<<<<<< HEAD:.github/ci.yml
+
+on:
+  pull_request:
+   # Tambahkan definisi branch main seperti berikut
+  branches:
+    - master
+    - main
+ 
+=======
 on:
   pull_request:
     branches:
     - master
     - main
+>>>>>>> 5f1e12d7803de4eeaa33ab35852eadb2fd231ddc:.github/workflows/ci.yml
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -16,15 +27,15 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_PASSWORD:${{secrets.PGPASSWORD_TEST}}
-          POSTGRES_DB:${{secrets.PGDATABASE_TEST}}
+          POSTGRES_PASSWORD : ${{secrets.PGPASSWORD_TEST}}
+          POSTGRES_DB : ${{secrets.PGDATABASE_TEST}}
         ports:
-          - 5432:5432
+          - 5432 : 5432
         options:
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+          -- health-cmd pg_isready
+          -- health-interval 10s
+          -- health-timeout 5s
+          -- health-retries 5
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
