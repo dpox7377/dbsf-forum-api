@@ -16,7 +16,7 @@ describe('ThreadRepositoryPostgres', () => {
   describe('addThread', () => {
     it('should persist new thread and return added thread correctly', async () => {
       
-      await UsersTableTestHelper.addUser({id:'thread-123'});
+      await UsersTableTestHelper.addUser({id:'user-123'});
       const newThread = {
         title:'title1',
         body:'aaa',
@@ -26,13 +26,13 @@ describe('ThreadRepositoryPostgres', () => {
       const repository = new ThreadRepositoryPostgres(pool,fakeIdGenerator);
 
       const addedThread = await repository.addThread(newThread);
-      expect(addedThread.id).toEqual('thread-123');
+      expect(addedThread.id).toEqual('user-123');
       expect(addedThread.title).toEqual(newThread.title);
       expect(addedThread.owner).toEqual(newThread.owner);
       
       const foundThread = ThreadsTableTestHelper.findThreadById('thread-123');
       expect(foundThread).toBeDefined();
-      expect(foundThread.id).toEqual('thread-123');
+      expect(foundThread.id).toEqual('user-123');
       expect(foundThread.title).toEqual(newThread.title);
       expect(foundThread.owner).toEqual(newThread.owner);
       expect(foundThread.body).toEqual(newThread.body);
@@ -49,7 +49,7 @@ describe('ThreadRepositoryPostgres', () => {
       const repository = new ThreadRepositoryPostgres(pool, {});
 
       // Action & Assert
-      await expect(repository.isThreadExist('thread-123')).resolves.toBe(true);
+      await expect(repository.isThreadExist('user-123')).resolves.toBe(true);
     });
 
     it('should return false if thread not exists', async () => {
@@ -83,7 +83,7 @@ describe('ThreadRepositoryPostgres', () => {
       const thread = await repository.getThreadById('thread-123');
 
       // Assert
-      expect(thread.id).toEqual('thread-123');
+      expect(thread.id).toEqual('user-123');
       expect(thread.title).toEqual('title');
       expect(thread.body).toEqual('body');
       expect(thread.date).toEqual(expect.any(String));
