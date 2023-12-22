@@ -16,7 +16,7 @@ describe('ThreadRepositoryPostgres', () => {
   describe('addThread', () => {
     it('should persist new thread and return added thread correctly', async () => {
       
-      await UsersTableTestHelper.addUser(id:'devi');
+      await UsersTableTestHelper.addUser({id:'devi'});
       const newThread = {
         title:'title1',
         body:'aaa',
