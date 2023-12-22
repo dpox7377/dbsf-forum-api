@@ -26,12 +26,12 @@ describe('AddThreadUseCase', () => {
       
       title: 'abc',
       body: 'body',
-      owner: 'devi',
+      owner: 'user-123',
     };
   const expectedAddedThread = new AddedThread({
     id:'123',
     title:'title',
-    owner:'devi'
+    owner:'user-123'
   });
    const addThread = await useCase.execute(useCasePayload); 
     // Assert
