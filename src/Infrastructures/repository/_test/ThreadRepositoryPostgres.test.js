@@ -20,7 +20,7 @@ describe('ThreadRepositoryPostgres', () => {
       const newThread = {
         title:'title1',
         body:'aaa',
-        owner:'devi',
+        owner:'user-123',
       };
       const fakeIdGenerator=() => '123';
       const repository = new ThreadRepositoryPostgres(pool,fakeIdGenerator);
