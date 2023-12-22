@@ -16,11 +16,11 @@ describe('ThreadRepositoryPostgres', () => {
   describe('addThread', () => {
     it('should persist new thread and return added thread correctly', async () => {
       
-      await UsersTableTestHelper.addUser({id:'devi'});
+      await UsersTableTestHelper.addUser({id:'user-123'});
       const newThread = {
         title:'title1',
         body:'aaa',
-        owner:'devi',
+        owner:'user-123',
       };
       const fakeIdGenerator=() => '123';
       const repository = new ThreadRepositoryPostgres(pool,fakeIdGenerator);
