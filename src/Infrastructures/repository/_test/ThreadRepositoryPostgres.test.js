@@ -26,7 +26,7 @@ describe('ThreadRepositoryPostgres', () => {
       const repository = new ThreadRepositoryPostgres(pool,fakeIdGenerator);
 
       const addedThread = await repository.addThread(newThread);
-      expect(addedThread.id).toEqual('thread-123');
+      expect(addedThread.id).toEqual(newThread.id);
       expect(addedThread.title).toEqual(newThread.title);
       expect(addedThread.owner).toEqual(newThread.owner);
       
